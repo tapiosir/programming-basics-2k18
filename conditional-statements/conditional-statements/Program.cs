@@ -23,7 +23,7 @@ namespace task4
                 // Evaluate user input
 
                 int evaluatedNumber;
-                bool isNumber = int.TryParse(userInput, out evaluatedNumber);
+                int.TryParse(userInput, out evaluatedNumber);
 
                 int evaluatedNumber1;
                 int.TryParse(userInput1, out evaluatedNumber1);
