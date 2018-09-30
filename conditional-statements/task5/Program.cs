@@ -51,7 +51,7 @@ namespace task5
 
                         else if (discountSelect == 2)
                         {
-                            Console.WriteLine($"ticket is {ticketPriceMtk:C}", ticketPriceMtk);
+                            Console.WriteLine($"ticket is {ticketPriceMtk:C}");
                         }
 
                         else if (discountSelect == 3)
