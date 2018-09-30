@@ -6,6 +6,7 @@ namespace task5
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             // prompt user
             Console.Write("enter age");
             Console.WriteLine();
@@ -51,27 +52,27 @@ namespace task5
 
                 if (discountSelect == 1)
                 {
-                    Console.WriteLine("ticket is {0}€", ticketPriceMili);
+                    Console.WriteLine("ticket is {0:C}", ticketPriceMili);
                 }
 
                 else if (discountSelect == 2)
                 {
-                    Console.WriteLine("ticket is {0}€", ticketPriceMtk);
+                    Console.WriteLine("ticket is {0:C}", ticketPriceMtk);
                 }
 
                 else if (discountSelect == 3)
                 {
-                    Console.WriteLine("ticket is {0}€", ticketPriceStud);
+                    Console.WriteLine("ticket is {0:C}", ticketPriceStud);
                 }
 
                 else if (discountSelect == 4)
                 {
-                    Console.WriteLine("ticket is {0}€", ticketPriceMtkStud);
+                    Console.WriteLine("ticket is {0:C}", ticketPriceMtkStud);
                 }
 
                 else if (discountSelect == 0)
                 {
-                    Console.WriteLine("ticket price is 16€");
+                    Console.WriteLine($"ticket price is{ticketPrice:C} ");
                 }
 
                 else
