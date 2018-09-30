@@ -10,75 +10,74 @@ namespace task5
             // prompt user
             Console.Write("enter age");
             Console.WriteLine();
+            string userInput = Console.ReadLine();
 
-            // Read user input
-            string userInput;
-            userInput = Console.ReadLine();
-            int ticketPrice = 16;
             //ticket prices
+            int ticketPrice = 16;
             double ticketPriceAge = ticketPrice * 0.5;
             double ticketPriceMtk = ticketPrice * 0.85;
             double ticketPriceMili = ticketPrice * 0.5;
             double ticketPriceStud = ticketPrice * 0.55;
             double ticketPriceMtkStud = ticketPrice * 0.40;
-
-            // Evaluate user input
-
-            int age;
-            int.TryParse(userInput, out age);
-
-            if (age < 8)
+            
+            bool isTrue = int.TryParse(userInput, out int age);
+            if (isTrue) { 
+            if (age <= 7)
             {
                 Console.WriteLine("ticket is free");
             }
-            else if (age > 64)
+            else if (age >= 65)
             {
-                Console.WriteLine("ticket is {0}€ ", ticketPriceAge);
+                Console.WriteLine($"ticket is {ticketPriceAge:C} ");
             }
-            else if (age < 16)
+            else if (age <= 15)
             {
-                Console.WriteLine("ticket is {0}€", ticketPriceAge);
+                Console.WriteLine($"ticket is {ticketPriceAge:C}");
             }
             else
             {
                 Console.WriteLine("other discounts? \n 1.servicemen \n 2.member of Mtk \n 3.student \n 4.student and mtk \n 0.none ");
 
-                string userInput1;
-                userInput1 = Console.ReadLine();
+                
+                string userInput1 = Console.ReadLine();
+                bool isTrue1 = int.TryParse(userInput1, out int discountSelect);
 
-                int discountSelect;
-                int.TryParse(userInput1, out discountSelect);
+                    if (isTrue1 && discountSelect >= 0 && discountSelect <= 4)
+                    {
+                        if (discountSelect == 1)
+                        {
+                            Console.WriteLine($"ticket is {ticketPriceMili:C}");
+                        }
 
+                        else if (discountSelect == 2)
+                        {
+                            Console.WriteLine($"ticket is {ticketPriceMtk:C}", ticketPriceMtk);
+                        }
 
-                if (discountSelect == 1)
-                {
-                    Console.WriteLine("ticket is {0:C}", ticketPriceMili);
-                }
+                        else if (discountSelect == 3)
+                        {
+                            Console.WriteLine($"ticket is {ticketPriceStud:C}");
+                        }
 
-                else if (discountSelect == 2)
-                {
-                    Console.WriteLine("ticket is {0:C}", ticketPriceMtk);
-                }
+                        else if (discountSelect == 4)
+                        {
+                            Console.WriteLine($"ticket is {ticketPriceMtkStud:C}");
+                        }
 
-                else if (discountSelect == 3)
-                {
-                    Console.WriteLine("ticket is {0:C}", ticketPriceStud);
-                }
-
-                else if (discountSelect == 4)
-                {
-                    Console.WriteLine("ticket is {0:C}", ticketPriceMtkStud);
-                }
-
-                else if (discountSelect == 0)
-                {
-                    Console.WriteLine($"ticket price is{ticketPrice:C} ");
-                }
-
-                else
-                {
-                    Console.WriteLine("invalid charater");
-                }
+                        else if (discountSelect == 0)
+                        {
+                            Console.WriteLine($"ticket price is {ticketPrice:C} ");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{userInput1} was invalid input");
+                    }
+            }
+            }
+            else
+            {
+                Console.WriteLine($"{userInput} is not an age");
             }
             Console.ReadKey();
 
