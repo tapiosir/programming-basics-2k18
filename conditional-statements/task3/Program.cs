@@ -11,8 +11,12 @@ namespace task3
             bool istrue = int.TryParse(userInput, out int number);
             if (istrue)
             { 
-            if (number > 0)
-            {
+            if(number == 0)
+                {
+                    Console.WriteLine($"number is {number}");
+                }
+             if (number > 0)
+               {
 
                 if (number % 2 == 0)
                 {
@@ -22,7 +26,7 @@ namespace task3
                 {
                     Console.WriteLine($"number {number} is positive and odd");
                 }
-            }
+               }
             if (number < 0)
             {
                 if (number % 2 == 0)
