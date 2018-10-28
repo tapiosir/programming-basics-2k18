@@ -18,7 +18,8 @@ namespace task05
             int k = 0;
             int l = 0;
             int m = 0;
-            if (isTrue) { 
+            if (isTrue)
+            { 
             if (num01 < 0)
             {
                 for (int n = -1; n >= num01; n--)

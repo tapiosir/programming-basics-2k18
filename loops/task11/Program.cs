@@ -17,14 +17,11 @@ namespace task11
                 {
                     num6Calculator++;
                 }
-                else
-                {
-
-                }
-                Console.WriteLine("{0}: {1}", i, die);
+               
+                Console.WriteLine($"{i}: {die}");
 
             }
-            Console.WriteLine("number 6 was threw {0} times", num6Calculator);
+            Console.WriteLine($"number 6 was threw {num6Calculator} times");
             Console.ReadKey();
         }
     }

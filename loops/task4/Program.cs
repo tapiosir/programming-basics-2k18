@@ -18,7 +18,8 @@ namespace task04
             int j = 1;
             int k = -1;
             int l = -1;
-            if (isTrue) { 
+            if (isTrue)
+            { 
             if (num01 < 1)
             {
                 while (l-- > num01)

@@ -15,7 +15,8 @@ namespace task03
             bool isTrue = int.TryParse(userInput, out int num01);
             int eSum = 0;
             int oSum = 0;
-            if (isTrue) { 
+            if (isTrue)
+            { 
             for (int i = 1; i <= num01; i++)
             {
                 if (i % 2 == 0)

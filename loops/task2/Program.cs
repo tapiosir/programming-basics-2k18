@@ -15,7 +15,8 @@ namespace task02
            bool isTrue = int.TryParse(userInput, out  int num01);
             int i = 1;
             int j = 1;
-            if (isTrue) { 
+            if (isTrue)
+            { 
             if (num01 < 1)
             {
                 Console.WriteLine("number too small");

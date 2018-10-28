@@ -15,7 +15,8 @@ namespace loops
             
             bool isTrue = int.TryParse(userInput, out int num01);
             int j = 1;
-            if (isTrue) { 
+            if (isTrue)
+            { 
             if (num01 < 0)
             {
                 Console.WriteLine("number was negative");
