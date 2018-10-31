@@ -1,42 +1,49 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace task4
 {
-    using System.Collections.Generic;
 
     class Program
     {
         static void Main(string[] args)
         {
-            NumberCollector();
+            
+            PrintResult(ListCheck(Numbercollect()));
             Console.ReadKey();
         }
 
-        public static void NumberCollector()
+        public static int ListCheck(List<int> list)
+        {
+            Console.WriteLine("you entered numbers: ");
+            foreach (var el in list)
+                Console.Write($"{el}. ");
+            int result = list[0];
+            for (int i = 1; i < list.Count; i++)
+            {
+                result = Math.Max(result, list[i]);
+            }
+            return result;
+        }
+
+        public static void PrintResult(int result)
+        {
+            Console.WriteLine($"\nLargest input was {result}");
+        }
+
+        public static List<int> Numbercollect()
         {
             List<int> list = new List<int>();
             Console.WriteLine("enter 10 numbers");
+            
             for (int j = 1; j <= 11;)
             {
-                if (j == 11)
-                {
-                    j++;
-                    Console.WriteLine("you entered numbers: ");
-                    foreach (var el in list)
-                        Console.Write($"{el}. ");
-                    int max = list[0];
-                    for (int i = 1; i < list.Count; i++)
-                    {
-                        max = Math.Max(max, list[i]);
-                    }
-                    Console.WriteLine($"\nlargest input was {max}");
-                }
-                else
+                if (j < 11)
                 {
                     Console.Write($"{j}: ");
                     string userInput = Console.ReadLine();
                     bool isTrue = int.TryParse(userInput, out int i);
-                    if (isTrue )
+                    if (isTrue)
                     {
                         if (i < 0)
                         {
@@ -50,10 +57,16 @@ namespace task4
                     }
                     else
                     {
-                        Console.WriteLine("invalid charater");
+                        Console.WriteLine("invalid character");
                     }
                 }
+                else
+                {
+                    
+                    return list;
+                }
             }
+            return null;
         }
     }
 }
