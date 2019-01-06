@@ -13,6 +13,8 @@ namespace task4
             Console.ReadKey();
         }
 
+        public static void PrintResult(int result) => Console.WriteLine($"\nLargest input was {result}");
+
         public static int ListCheck(List<int> list)
         {
             Console.WriteLine("you entered numbers: ");
@@ -24,11 +26,6 @@ namespace task4
                 result = Math.Max(result, list[i]);
             }
             return result;
-        }
-
-        public static void PrintResult(int result)
-        {
-            Console.WriteLine($"\nLargest input was {result}");
         }
 
         public static List<int> Numbercollect()
@@ -62,7 +59,6 @@ namespace task4
                 }
                 else
                 {
-                    
                     return list;
                 }
             }
